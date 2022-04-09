@@ -16,9 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-/*
- * This class will handle all incoming request
- */
+
 @RestController
 public class UrlShortenerController
 {
@@ -26,11 +24,7 @@ public class UrlShortenerController
     private UrlService urlService;
     
    
-    /*
-     * 1. Take input url and call short link generator method
-     * 2. If step1 fails then give response as error
-     * 3. Otherwise set response details and return to user with ok status
-     */
+    
     @PostMapping("/generate")
     public ResponseEntity<?> generateShortLink(@RequestBody UrlDto urlDto)
     {
@@ -52,11 +46,7 @@ public class UrlShortenerController
 
     }
     
-    /*
-     * 1. If input short link is empty or unavailable in DB or then return error response
-     * 2. If short link is expired then ask for re-generate
-     * 3. Otherwise fetch long link from DB and redirect short link to it
-     */
+    
     @GetMapping("/{shortLink}")
     public ResponseEntity<?> redirectToOriginalUrl(@PathVariable String shortLink, HttpServletResponse response) throws IOException {
 

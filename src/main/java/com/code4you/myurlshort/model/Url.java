@@ -6,12 +6,10 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import java.time.LocalDateTime;
 
-/*
- * Entity class to store details of url in db
- */
+
 @Entity
 public class Url {
-	// Required attributes
+	
 	@Id
 	@GeneratedValue
 	private long id;
@@ -21,7 +19,7 @@ public class Url {
 	private LocalDateTime creationDate;
 	private LocalDateTime expirationDate;
 
-	// parameterized constructor
+	
 	public Url(long id, String originalUrl, String shortLink, LocalDateTime creationDate,
 			LocalDateTime expirationDate) {
 		this.id = id;
@@ -31,11 +29,11 @@ public class Url {
 		this.expirationDate = expirationDate;
 	}
 
-	// default constructor
+
 	public Url() {
 	}
 
-	// getters and setters
+	
 	public long getId() {
 		return id;
 	}
@@ -76,7 +74,7 @@ public class Url {
 		this.expirationDate = expirationDate;
 	}
 
-	// to string method overridden
+	
 	@Override
 	public String toString() {
 		return "Url{" + "id=" + id + ", originalUrl='" + originalUrl + '\'' + ", shortLink='" + shortLink + '\''
